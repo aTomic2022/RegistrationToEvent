@@ -26,4 +26,7 @@ public class Person {
     @Column
     private String email;
 
+    @Column
+    private String birthDay;
+
 }
