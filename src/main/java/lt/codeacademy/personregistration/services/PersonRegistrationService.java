@@ -2,10 +2,12 @@ package lt.codeacademy.personregistration.services;
 
 import lt.codeacademy.personregistration.entities.Person;
 import lt.codeacademy.personregistration.repositories.PersonRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PersonRegistrationService {
     private final PersonRepository personRepository;
 
@@ -17,7 +19,7 @@ public class PersonRegistrationService {
         return this.personRepository.findAll();
     }
 
-    public void deletePerson(Long id) {
+    public void deletePersonById(Long id) {
         this.personRepository.deleteById(id);
     }
 
