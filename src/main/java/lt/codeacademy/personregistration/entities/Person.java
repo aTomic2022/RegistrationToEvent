@@ -18,7 +18,7 @@ public class Person {
     private Long id;
 
     @Column
-    private String name;
+    private String personName;
 
     @Column
     private String lastName;
@@ -27,7 +27,7 @@ public class Person {
     private String email;
 
     @Column
-    private String birthDay;
+    private String birthDate;
 
 
 }

@@ -2,7 +2,6 @@ package lt.codeacademy.personregistration.converter;
 
 import lt.codeacademy.personregistration.dto.CreatePersonRequestDTO;
 import lt.codeacademy.personregistration.dto.GetPersonResponseDTO;
-import lt.codeacademy.personregistration.dto.GetPersonResponseDTO;
 import lt.codeacademy.personregistration.entities.Person;
 
 public class PersonConverter {
@@ -11,11 +10,11 @@ public class PersonConverter {
         GetPersonResponseDTO personDTO = null;
         if (person != null) {
             personDTO = new GetPersonResponseDTO();
-            personDTO.setName(person.getName());
+            personDTO.setPersonName(person.getPersonName());
             personDTO.setId(person.getId());
             personDTO.setLastName(person.getLastName());
             personDTO.setEmail(person.getEmail());
-            personDTO.setBirthDate(person.getBirthDay());
+            personDTO.setBirthDate(person.getBirthDate());
         }
         return personDTO;
     }
@@ -23,19 +22,20 @@ public class PersonConverter {
 
     public static Person convertCreatePersonRequestDtoToPerson(CreatePersonRequestDTO requestDTO) {
         Person person = null;
-        if (person != null) {
+        if (requestDTO != null) {
             person = new Person();
-            person.setName(requestDTO.getName());
+            person.setPersonName(requestDTO.getPersonName());
             person.setLastName(requestDTO.getLastName());
             person.setEmail(requestDTO.getEmail());
+            person.setBirthDate(requestDTO.getBirthDate());
         }
         return person;
     }
 
     public static Person patchPersonFromCreatePersonRequestDto(Person person,
                                                                CreatePersonRequestDTO requestDTO) {
-        if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getName(), person.getName())) {
-            person.setName(requestDTO.getName());
+        if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getPersonName(), person.getPersonName())) {
+            person.setPersonName(requestDTO.getPersonName());
         }
         if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getLastName(), person.getLastName())) {
             person.setLastName(requestDTO.getLastName());
@@ -43,8 +43,8 @@ public class PersonConverter {
         if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getEmail(), person.getEmail())) {
             person.setEmail(requestDTO.getEmail());
         }
-        if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getBirthDate(), person.getBirthDay())) {
-            person.setBirthDay(requestDTO.getBirthDate());
+        if (isNewStringValueEmptyNullOrSameAsOld(requestDTO.getBirthDate(), person.getBirthDate())) {
+            person.setBirthDate(requestDTO.getBirthDate());
         }
         return  person;
     }

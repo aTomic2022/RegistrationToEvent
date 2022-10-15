@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 public class PersonRegistrationService {
-    private final PersonRepository personRepository;
+    private PersonRepository personRepository;
 
     public PersonRegistrationService(PersonRepository personRepository) {
         this.personRepository = personRepository;

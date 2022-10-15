@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class CreatePersonRequestDTO {
-    private String name;
+    private String personName;
     private String lastName;
     private String email;
     private String birthDate;
@@ -16,7 +16,7 @@ public class CreatePersonRequestDTO {
     @Override
     public String toString() {
         return "CreatePersonRequestDTO{" +
-                "name='" + name + '\'' +
+                "name='" + personName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", birthDate='" + birthDate + '\'' +
