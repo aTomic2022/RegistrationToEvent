@@ -150,7 +150,6 @@ const renderPersonTableRow = (tbody, person) => {
   const birthDateCell = renderTableCell(person.birthDate, "birthDateCell");
   const actionsCell = renderTableCell(undefined, "actionsCell");
   renderActionButtons(actionsCell, person.id);
-
   tr.append(personNameCell, lastNameCell, emailCell, birthDateCell, actionsCell);
 
   tbody.appendChild(tr);
@@ -160,12 +159,13 @@ const renderPersonTableHeaders = (table) => {
   const tr = document.createElement("tr");
   const thead = document.createElement("thead");
   tr.appendChild(thead);
-  const personNameTh = renderTableHeader("Person name");
-  const lastNameTh = renderTableHeader("Person last name");
-  const emailTh = renderTableHeader("Person email");
-  const birthDateTh = renderTableHeader("Person birth day");
+  const personNameTh = renderTableHeader("Name");
+  const lastNameTh = renderTableHeader("Last name");
+  const emailTh = renderTableHeader("Email");
+  const birthDateTh = renderTableHeader("Age");
   const actionsTh = renderTableHeader("Actions");
 
   thead.append(personNameTh, lastNameTh, emailTh, birthDateTh, actionsTh);
   table.appendChild(thead);
 };
+

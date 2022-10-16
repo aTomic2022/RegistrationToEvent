@@ -9,7 +9,7 @@ export const handlePersonFormSubmit = async () => {
       form.personName.value,
       form.lastName.value,
       form.email.value,
-      form.birthDate.value
+      getAge(form.birthDate.value)
     );
   });
 };
@@ -19,3 +19,7 @@ const submitPerson = async (personName, lastName, email, birthDate) => {
   await saveEventPerson(person);
   await renderPersonTable();
 };
+function getAge(dateString) {
+  var ageInMilliseconds = new Date() - new Date(dateString);
+  return Math.floor(ageInMilliseconds/1000/60/60/24/365);
+  }
