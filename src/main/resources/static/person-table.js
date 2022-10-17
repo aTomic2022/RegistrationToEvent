@@ -43,14 +43,14 @@ const renderTableHeader = (innerText) => {
 const renderActionButtons = (actionsCell, id) => {
   const editButton = document.createElement("button");
   editButton.innerText = "Edit";
-  editButton.className = "editButton"
+  editButton.className = "editButton btn btn-outline-warning"
   editButton.addEventListener("click", () => {
     handleEdit(id);
   });
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
-  deleteButton.className = "deleteButton";
+  deleteButton.className = "deleteButton btn btn-outline-danger";
   deleteButton.addEventListener("click", () => {
     handleDelete(id);
   });
@@ -95,14 +95,14 @@ const handleEdit = async (id) => {
 
   const saveButton = document.createElement("button");
   saveButton.innerText = "Save";
-  saveButton.className = "saveButton";
+  saveButton.className = "saveButton btn btn-success";
   saveButton.addEventListener("click", () => {
     handleUpdate(id);
   });
 
   const cancelButton = document.createElement("button");
   cancelButton.innerText = "Cancel";
-  cancelButton.className = "cancelButton";
+  cancelButton.className = "cancelButton btn btn-outline-dark";
   cancelButton.addEventListener("click", () => {
     window.location.reload();
   });

@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(52, 152, 109);
+}
+
+h1, h3, form {
+    text-align: left;
+    font-family: verdana;
+    background-color: azure;
+    opacity: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    width: 30%;
+}
+h1, h3 {
+    margin-top: 50px;
+
+}
+h3{
+    background-color: rgb(52, 152, 109);
+    color:azure;
+}
+
+.personContainer{
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+.btn{
+    margin: 5px;
+}
+
+.birthDateCell > input[type="text"]{
+    width: 50px;
+}
